@@ -1,0 +1,8 @@
+{
+    "require": {
+        "symfony/http-foundation": "^6.4",
+        "symfony/var-dumper": "^6.4",
+        "symfony/routing": "^6.4",
+        "symfony/http-kernel": "^6.4"
+    }
+}
