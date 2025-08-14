@@ -3,9 +3,6 @@
     namespace App\Controllers;
     use App\Models\Student;
     use Symfony\Component\HttpFoundation\Request;
-    // use App\Database;
-
-
 
     class StudentController 
     {
@@ -68,6 +65,5 @@
             }
         }
     }
-
 
 ?>

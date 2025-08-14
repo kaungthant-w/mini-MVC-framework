@@ -1,7 +1,4 @@
 <?php
-
-
-
 	use App\Controllers\StudentController;
 
 	$routes = [
@@ -15,17 +12,11 @@
 	];
 
 
-	// die(var_dump($_SERVER["PATH_INFO"]));
 	if(array_key_exists("PATH_INFO", $_SERVER)) {
 		$route = $_SERVER["PATH_INFO"];
 	} else {
 		$route = "/index";
 	}
-
-	// die(var_dump($route));
-
-	// die(var_dump($routes[$route]));
-
 
 	if(array_key_exists($route, $routes)) {
 		$controller = $routes[$route][0];
