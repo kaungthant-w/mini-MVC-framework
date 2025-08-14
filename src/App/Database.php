@@ -32,37 +32,37 @@ class Database
 		
 	}
 
-	public function index() {
-		return Student::get();
-	}
+	// public function index() {
+	// 	return Student::get();
+	// }
 
-	public function show($id) {
-		return Student::find($id);
-	}
+	// public function show($id) {
+	// 	return Student::find($id);
+	// }
 
-	public function update($data) {
-		$studentUpdate = Student::where("id", $data["id"])->update($data);
+	// public function update($data) {
+	// 	$studentUpdate = Student::where("id", $data["id"])->update($data);
 
-			if($studentUpdate) {
-				header('Location: index.php');
-			} else {
-				echo "something wrong";
-			}
-	}
+	// 		if($studentUpdate) {
+	// 			header('Location: index.php');
+	// 		} else {
+	// 			echo "something wrong";
+	// 		}
+	// }
 
-	public function delete($id) {
-		$student = Student::destroy($id);
-		if($student) {
-			header("Location: index.php");
-		}
-	}
+	// public function delete($id) {
+	// 	$student = Student::destroy($id);
+	// 	if($student) {
+	// 		header("Location: index.php");
+	// 	}
+	// }
 
-	public function insert($data) {
-		$studentInsert = Student::create($data);
+	// public function insert($data) {
+	// 	$studentInsert = Student::create($data);
 
-		if($studentInsert) {
-			header("Location: index.php");
-		}
-	}
+	// 	if($studentInsert) {
+	// 		header("Location: index.php");
+	// 	}
+	// }
 
 }

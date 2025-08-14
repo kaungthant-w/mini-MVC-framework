@@ -1,32 +1,3 @@
-<?php
-
-require_once __DIR__ . '/vendor/autoload.php';
-//    include_once("src/App/DB.php");
-//    include_once("src/Ultis/DB.php");
-
-// use Symfony\Component\HttpFoundation\Request;
-
-// $request = Request::createFromGlobals();
-// use App\Utils\Database;
-
-// die(var_dump($request));
-// dd($request);
-// dump($request);
-// dump($request->query->all());
-// dump($request->query->get("name"));
-
-// use Ultis\DB AS UltisDB;
-// $db = new UltisDB();
-
-use App\Database;
-$db = new Database();
-
-$student = $db -> show($_GET["id"]);
-
-// die(var_dump($student));
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
