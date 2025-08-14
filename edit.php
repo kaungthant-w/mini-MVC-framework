@@ -2,9 +2,11 @@
 	// include_once("db.php");
     include_once __DIR__ . '/vendor/autoload.php';
 
-    use Ultis\DB as UltisDB;
+    // use Ultis\DB as UltisDB;
+    use App\Database;
     
-	$db = new UltisDB();
+	// $db = new UltisDB();
+    $db = new Database();
 	$result = $db -> show($_GET['id']);
 
 ?>

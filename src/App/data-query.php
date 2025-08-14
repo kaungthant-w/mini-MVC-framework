@@ -33,15 +33,25 @@ class Database
 	}
 
 	public function index() {
-		return Student::get();
+		$students = DB::table("students")->orderBy("id","desc")->get();
+		return $students;
 	}
 
 	public function show($id) {
-		return Student::find($id);
+		$student = DB::table("students")->where("id", $id) -> first();
+		return $student;
 	}
 
 	public function update($data) {
-		$studentUpdate = Student::where("id", $data["id"])->update($data);
+		$studentUpdate = DB::table("students")
+			-> where("id", $data['id'])
+			-> update([
+				'name' => $data['name'],
+				'email' => $data['email'],
+				'gender' => $data['gender'],
+				'dob' => $data['dob'],
+				'age' => $data['age']
+			]);
 
 			if($studentUpdate) {
 				header('Location: index.php');
@@ -51,14 +61,20 @@ class Database
 	}
 
 	public function delete($id) {
-		$student = Student::destroy($id);
+		$student = DB::table("students")->where("id", $id) -> delete();
 		if($student) {
 			header("Location: index.php");
 		}
 	}
 
 	public function insert($data) {
-		$studentInsert = Student::create($data);
+		$studentInsert = DB::table("students") -> insert([
+			'name' => $data['name'],
+			'email' => $data['email'],
+			'gender' => $data['gender'],
+			'dob' => $data['dob'],
+			'age' => $data['age']
+		]);
 
 		if($studentInsert) {
 			header("Location: index.php");
