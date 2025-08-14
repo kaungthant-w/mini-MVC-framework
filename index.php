@@ -1,6 +1,16 @@
 <?php
-	include_once("db.php");
-	$db = new DB();
+//    include_once("vendor/autoload.php");
+	include_once __DIR__.'/vendor/autoload.php';
+   
+    // use App\DB;
+	// use Ultis\DB as UltisDB;
+	use App\Database;
+
+	$db = new Database();
+
+	// die(var_dump($db -> index()));
+
+	
 	$results = $db -> index();
 
 
@@ -39,14 +49,14 @@
 				<?php foreach($results as $value): ?>
 					<tr>
 						<th scope="row"><?php echo $id++; ?></th>
-						<td><?php echo $value["name"]; ?></td>
-						<td><?php echo $value["email"]; ?></td>
-						<td><?php echo ucfirst($value["gender"]); ?></td>
-						<td><?php echo $value["age"]; ?></td>
+						<td><?php echo $value->name; ?></td>
+						<td><?php echo $value->email; ?></td>
+						<td><?php echo ucfirst($value->gender); ?></td>
+						<td><?php echo $value->age; ?></td>
 						<td>
-							<a href="edit.php?id=<?php echo $value["id"]; ?>" class="btn btn-primary">Edit</a>
-							<a href="delete.php?id=<?php echo $value["id"]; ?>" class="btn btn-outline-danger">Delete</a>
-							<a href="show.php?id=<?php echo $value["id"]; ?>" class="btn btn-outline-warning">Details</a>
+							<a href="edit.php?id=<?php echo $value->id; ?>" class="btn btn-primary">Edit</a>
+							<a href="delete.php?id=<?php echo $value->id; ?>" class="btn btn-outline-danger">Delete</a>
+							<a href="show.php?id=<?php echo $value->id; ?>" class="btn btn-outline-warning">Details</a>
 						</td>
 					</tr>
 				<?php endforeach; ?>
