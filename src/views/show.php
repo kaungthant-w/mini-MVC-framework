@@ -1,3 +1,6 @@
+<?php
+	// die(var_dump($student->name));
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,7 @@
 	<div class="container mt-3">
 		<p class="h1">Student Table</p>
 		<div class="w-100">
-			<a href="index.php" class="btn btn-warning mb-3 me-auto">Back</a>
+			<a href="/students" class="btn btn-warning mb-3 me-auto">Back</a>
 		</div>
 
 

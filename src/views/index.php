@@ -11,7 +11,7 @@
 	
 	<div class="container mt-3">
 		<p class="h1">Student Table</p>
-		<a href="/store" class="btn btn-success  float-end mb-3">Add New Student</a>
+		<a href="/students/store" class="btn btn-success  float-end mb-3">Add New Student</a>
 
 
 	<table class="table table-striped table-bordered">
@@ -36,9 +36,9 @@
 						<td><?php echo ucfirst($value->gender); ?></td>
 						<td><?php echo $value->age; ?></td>
 						<td>
-							<a href="/edit?id=<?php echo $value->id; ?>" class="btn btn-primary">Edit</a>
-							<a href="/delete?id=<?php echo $value->id; ?>" class="btn btn-outline-danger">Delete</a>
-							<a href="/show?id=<?php echo $value->id; ?>" class="btn btn-outline-warning">Details</a>
+							<a href="/students/edit/<?php echo $value->id; ?>" class="btn btn-primary">Edit</a>
+							<a href="/students/delete/<?php echo $value->id; ?>" class="btn btn-outline-danger">Delete</a>
+							<a href="/student/<?php echo $value->id; ?>" class="btn btn-outline-warning">Details</a>
 						</td>
 					</tr>
 				<?php endforeach; ?>

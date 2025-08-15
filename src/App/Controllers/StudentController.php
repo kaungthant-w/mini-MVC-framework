@@ -19,49 +19,49 @@
         public function index()
         {
             $students = Student::get();
-            view("index.php", ["students" => $students]);
+            return view("index.php", ["students" => $students]);
         }
 
-        public function show()
+        public function show($id)
         {
-            $student = Student::find($this -> query -> get('id'));
-            view("show.php", ["student" => $student]);
+            $student = Student::find($id);
+            return view("show.php", ["student" => $student]);
         }
-
+        
         public function store() {
-            view("store.php");
+            return view("store.php");
         }
 
 
-        public function create() {
-            $student = Student::create($this -> post -> all());
+        public function create(Request $request) {
+            $student = Student::create($request -> request -> all());
 
             if($student) {
-                header("location: edit?id={$student->id}");
+                header("location: /students");
             }
 
             
         }
 
-        public function edit()
+        public function edit($id)
         {
-            $student = Student::find($this->query->get("id"));
-            view("edit.php", ["student" => $student]);
+            $student = Student::find($id);
+            return view("edit.php", ["student" => $student]);
         }
 
-        public function update() 
+        public function update(Request $request) 
         {
-            $result = Student::where("id", $this -> post -> get("id"))-> update($this -> post -> all());
+            $result = Student::where("id", $request -> request -> get("id"))-> update($request -> request -> all());
             if($result) {
-                header("location: /index");
+                header("location: /students");
             }
         }
 
-        public function delete()
+        public function delete($id)
         {
-            $result = Student::destroy($this->query->get("id"));
+            $result = Student::destroy($id);
             if($result) {
-                header("Location:/index");
+                header("Location:/students");
             }
         }
     }

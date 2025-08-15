@@ -11,10 +11,10 @@
 	
 	<div class="container mt-3">
 
-    <a href="/index" class="btn btn-warning">Back</a>
+    <a href="/students" class="btn btn-warning">Back</a>
 
     <div class=" m-auto " style="width:50%;">
-        <form action="/update" method="POST">
+        <form action="/students/update" method="POST">
             <input type="hidden" name="id" value="<?php echo $student->id; ?>">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>

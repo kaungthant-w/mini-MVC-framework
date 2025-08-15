@@ -4,7 +4,9 @@
         "symfony/var-dumper": "^6.4",
         "symfony/routing": "^6.4",
         "symfony/http-kernel": "^6.4",
-        "illuminate/database": "^10.48"
+        "illuminate/database": "^10.48",
+        "symfony/event-dispatcher": "^6.4",
+        "symfony/templating": "^6.4"
     },
 
     "autoload": {
